@@ -1,0 +1,22 @@
+{
+  "product": {
+    "iPhone": {
+      "_id": "54c1321303069f7ee53adcfb",
+      "name": "iPhone 6 Plus",
+      "company": "Apple",
+      "review": "The bigger screen is awesome!"
+    },
+    "Coffee": {
+      "_id": "54c1321303069f7ee53adcfa",
+      "name": "Pumpkin Spice Latte",
+      "company": "Starbucks",
+      "review": "Am I basic yet?"
+    },
+    "Car": {
+      "_id": "54c1321303069f7ee53adcfc",
+      "name": "Prius",
+      "company": "Toyota",
+      "review": "Cute car."
+    }
+  }
+}

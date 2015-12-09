@@ -1,0 +1,76 @@
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>Project Leopard</title>
+
+        <script src="js/lib/jquery-1.11.3.min.js"></script>
+        <script src="js/lib/underscore-min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/lib/backbone-min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/lib/mustache.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/lib/socket.io.js" type="text/javascript" charset="utf-8"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    </head>
+    <body>
+        <div id="portfolio-manager" class="container">
+            <h1 align="center"><i>Project Leopard:</i><br> An Automatic Stock Comparables Engine</h1>
+            <hr/>
+
+            <div id="search-container" class="listen-to" style="display: show"></div>
+            <table id="result-container" class="table table-hover"></table>
+            <h2> My Portfolio </h2>
+            <table id="portfolio-container" class="table table-hover"></table>
+
+            <script id="table-headers" type="text/template">
+                <tr class="row">
+                    <th class="col-md-1">Stock</th>
+                    <th class="col-md-1">Price</th>
+                    <th class="col-md-1">Market Cap</th>
+                    <th class="col-md-1">Enterprise Value</th>
+                    <th class="col-md-1">Revenue</th>
+                    <th class="col-md-1">EBITDA</th>
+                    <th class="col-md-1">Net Income</th>
+                    <th class="col-md-1"><b>EV/EBITDA</b></th>
+                    <th class="col-md-1"><b>EV/Revenue</b></th>
+                    <th class="col-md-1"><b>Trailing P/E</b></th>
+                    <th class="col-md-1"><b>P/S</b></th>
+                    <th class="col-md-1">Action</th>
+                </tr>
+            </script>
+
+            <script id="search-template" type="text/template">
+                	<div class="col-md-6  col-md-offset-3">
+                    	<input type="text" name="search" id="search" class="search form-control" style="text-transform:uppercase"  value="" autocomplete="off" placeholder="Search for..."/></div>
+                    	<button class="add-stock" type="button" class="btn btn-default">Add Stock</button>
+                <br><br>
+            </script>
+
+
+            <script id="portfolio-template" type="text/template">
+                <tr class="row">
+                    <td class="col-md-1">{{symbol}}</td>
+                    <td class="col-md-1">{{price}}</td>
+                    <td class="col-md-1">{{marketCap}}</td>
+                    <td class="col-md-1">{{ev}}</td>
+                    <td class="col-md-1">{{revenue}}</td>
+                    <td class="col-md-1">{{ebitda}}</td>
+                    <td class="col-md-1">{{netIncome}}</td>
+                    <td class="col-md-1">{{ev_ebitda}}</td>
+                    <td class="col-md-1">{{ev_rev}}</td>
+                    <td class="col-md-1">{{p_e}}</td>
+                    <td class="col-md-1">{{p_s}}</td>
+                    <td class="col-md-1"><button id="delete-stock" type="button" class="btn btn-default" symbol="{{symbol}}">Delete</button></td>
+                </tr>
+            </script>
+        </div>
+        
+        <script src="js/client.js" type="text/javascript" charset="utr-8"></script>
+        <script src="js/model/stockModel.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/collection/portfolioCollection.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/view/portfolioView.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/view/searchView.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/router/router.js" type="text/javascript" charset="utf-8"></script>
+    
+    </body>
+</html>
